@@ -15,7 +15,7 @@ class Task(db.Model):
 with app.app_context():
     db.create_all()
 
-@app.get("/userdetails")
+@app.get("/users")
 def home():
     tasks = Task.query.all()
     task_list = [
@@ -23,7 +23,7 @@ def home():
     ]
     return jsonify({"user_details": task_list})
 
-@app.route('/userdetails', methods=['POST'])
+@app.route('/users', methods=['POST'])
 def postData():
     data = request.get_json()  # Call the method to get the JSON data
     newUserDetails = Task(email=data['email'], password=data['password'])
