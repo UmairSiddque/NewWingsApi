@@ -31,5 +31,5 @@ def postData():
     db.session.commit()  # Don't forget to commit the transaction
     return jsonify({'message': "New User added"})
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=5000)
